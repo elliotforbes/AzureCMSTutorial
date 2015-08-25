@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Article;
+
 class ArticleController extends Controller
 {
     /**
@@ -16,7 +18,9 @@ class ArticleController extends Controller
      */
     public function index()
     {
+        $articles = Article::paginate(10);
         
+        return view('index', compact('articles'));
     }
 
     /**

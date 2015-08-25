@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('app');
-});
-
+Route::get('/', 'ArticleController@index');
 
 Route::get('/about', function(){
     return view('about');
